@@ -1,57 +1,46 @@
-# Project Name
+# Welcome to Sentinel Solution for SAP Community for SAP Integration Suite Recipes
 
-(short, 1-3 sentenced, description of the project)
+Extend the official Sentinel Solution for SAP (based on agentless data connector) with the artifacts in this repository provided by the community. This project is a collection of integration artifacts or "recipes", specifically designed to help you implement your custom integration projects for Sentinel for SAP effectively.
 
-## Features
+> [!NOTE]
+> This is a community driven repository; you can simply discover and consume the artifacts or even better contribute your own. Learn more [here](CONTRIBUTING.md).
+>
+> We are happy to feature your work in this repository.
 
-This project framework provides the following features:
+## Available Scenarios
 
-* Feature 1
-* Feature 2
-* ...
+Find the available scenarios in the [artifacts folder](integration-artifacts/).
 
-## Getting Started
+## Requirements
 
-### Prerequisites
+- You will need a SAP Cloud Integration tenant to consume and enhance this content. Get a free trial of SAP Integration Suite [here](https://www.sap.com/products/technology-platform/trial.html).
+- You will need an SAP system fit for your integration scenario. Check out these free options:
+  - SAP's [ABAP Platform Trial image](https://hub.docker.com/r/sapse/abap-cloud-developer-trial),
+  - SAP S/4HANA Cloud, public cloud edition [Trial](https://www.sap.com/products/erp/s4hana/trial.html),
+  - S/4HANA Fully-Activated Appliance from [SAP Cloud Appliance Library](https://cal.sap.com/), or
+  - your own available in-house SAP system.
+- You will need a Microsoft Sentinel workspace to consume and enhance this content. Get a free trial of Microsoft Sentinel [here](https://azure.microsoft.com/free/). Find additional details for the free trial [here](https://azure.microsoft.com/pricing/details/microsoft-sentinel/).
 
-(ideally very short, if any)
+- You may need a SAP Cloud Connector instance deployed with line of sight to your SAP system in case of private networking. Install SAP Cloud Connector from [here](https://tools.hana.ondemand.com/#cloud) for free.
 
-- OS
-- Library version
-- ...
+## Getting Started 🛫
 
-### Installation
+- discover the provided scenarios below
+- deploy the provided integration flows to your SAP Cloud Integration tenant
+  - Download or clone the repository to your local machine
+  - Import the integration flows into your SAP Cloud Integration tenant using the Web UI
+  - Configure the integration flows with your SAP system and Microsoft Sentinel workspace details as needed
+- provided feedback to the community by creating issues or pull requests
 
-(ideally very short)
+## Contributing 👩🏼‍🤝‍👨🏽
 
-- npm install [package name]
-- mvn install
-- ...
+This project welcomes contributions and suggestions. Use Pull Requests to propose changes to the content. Please see the [contribution guidelines](CONTRIBUTING.md) and the [contribution packaging guide](PACKAGING.md) for more information.
 
-### Quickstart
-(Add steps to get up and running quickly)
+Please use [GitHub Issues](https://github.com/Azure-Samples/Sentinel-For-SAP-Community/issues) to report errors or request new features.
 
-1. git clone [repository clone url]
-2. cd [repository name]
-3. ...
-
-
-## Demo
-
-A demo app is included to show how to use the project.
-
-To run the demo, follow these steps:
-
-(Add steps to start up the demo)
-
-1.
-2.
-3.
+This project has adopted the [Microsoft Open Source Code of Conduct](https://opensource.microsoft.com/codeofconduct/). For more information see the [Code of Conduct FAQ](https://opensource.microsoft.com/codeofconduct/faq/) or contact [opencode@microsoft.com](opencode@microsoft.com) with any additional questions or comments.
 
 ## Resources
 
-(Any additional resources or related projects)
-
-- Link to supporting information
-- Link to similar sample
-- ...
+- [Microsoft Sentinel Solution for SAP | Microsoft Learn](https://learn.microsoft.com/azure/sentinel/sap/deployment-overview?tabs=agentless)
+- [Microsoft Sentinel Solution for SAP BTP | Microsoft Learn](https://learn.microsoft.com/azure/sentinel/sap/sap-btp-solution-overview)

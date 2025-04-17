@@ -1,13 +1,7 @@
-## [project-title] Changelog
+# Changelog
 
-<a name="x.y.z"></a>
-# x.y.z (yyyy-mm-dd)
+Microsoft Sentinel Solution for SAP - Community integration package for SAP Integration Suite.
 
-*Features*
-* ...
-
-*Bug Fixes*
-* ...
-
-*Breaking Changes*
-* ...
+| **Date Modified (DD-MM-YYYY)** | **Comments** |
+| --- | --- |
+| 17-04-2025 | Initial release |

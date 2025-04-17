@@ -27,9 +27,8 @@ What kind of change does this Pull Request introduce?
 
 ```
 git clone [repo-address]
-cd [repo-name]
-git checkout [branch-name]
-npm install
+import the contributed artifact into your SAP Cloud Integration tenant
+reproduce the scenario
 ```
 
 * Test the code
