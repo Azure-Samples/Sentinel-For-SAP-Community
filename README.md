@@ -27,13 +27,13 @@ Find the available scenarios in the [artifacts folder](integration-artifacts/).
 
 ### Getting Started 🛫
 
-1. deploy the provided integration flows to your SAP Cloud Integration tenant:
+1. Deploy the provided integration flows to your SAP Cloud Integration tenant:
+  
+    1. Download or clone the repository to your local machine
+    2. Import the integration flows (zip packages) into your SAP Cloud Integration tenant using the Web UI
+    3. Configure the integration flows with your SAP system and Microsoft Sentinel workspace details as needed
 
-- Download or clone the repository to your local machine
-- Import the integration flows (zip packages) into your SAP Cloud Integration tenant using the Web UI
-- Configure the integration flows with your SAP system and Microsoft Sentinel workspace details as needed
-
-1. provided feedback to the community by creating issues or pull requests
+2. Provide feedback to the community by creating [issues](https://github.com/Azure-Samples/Sentinel-For-SAP-Community/issues) or [pull requests](https://github.com/Azure-Samples/Sentinel-For-SAP-Community/pulls)
 
 ## Contributing 👩🏼‍🤝‍👨🏽
 
