@@ -11,7 +11,7 @@ Extend the official Sentinel Solution for SAP (based on agentless data connector
 
 Find the available scenarios in the [artifacts folder](integration-artifacts/).
 
-## Requirements
+### Requirements
 
 - You will need a SAP Cloud Integration tenant to consume and enhance this content. Get a free trial of SAP Integration Suite [here](https://www.sap.com/products/technology-platform/trial.html).
 - You will need an SAP system fit for your integration scenario. Check out these free options:
@@ -23,14 +23,15 @@ Find the available scenarios in the [artifacts folder](integration-artifacts/).
 
 - You may need a SAP Cloud Connector instance deployed with line of sight to your SAP system in case of private networking. Install SAP Cloud Connector from [here](https://tools.hana.ondemand.com/#cloud) for free.
 
-## Getting Started 🛫
+### Getting Started 🛫
 
-- discover the provided scenarios below
-- deploy the provided integration flows to your SAP Cloud Integration tenant
-  - Download or clone the repository to your local machine
-  - Import the integration flows into your SAP Cloud Integration tenant using the Web UI
-  - Configure the integration flows with your SAP system and Microsoft Sentinel workspace details as needed
-- provided feedback to the community by creating issues or pull requests
+1. deploy the provided integration flows to your SAP Cloud Integration tenant:
+
+- Download or clone the repository to your local machine
+- Import the integration flows (zip packages) into your SAP Cloud Integration tenant using the Web UI
+- Configure the integration flows with your SAP system and Microsoft Sentinel workspace details as needed
+
+1. provided feedback to the community by creating issues or pull requests
 
 ## Contributing 👩🏼‍🤝‍👨🏽
 
