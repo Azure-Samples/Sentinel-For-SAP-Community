@@ -4,4 +4,4 @@ Microsoft Sentinel Solution for SAP - Community integration package for SAP Inte
 
 | **Date Modified (DD-MM-YYYY)** | **Comments** |
 | --- | --- |
-| 17-04-2025 | Initial release |
+| 17-04-2025 | Initial release, SAP SOAR flow added |
