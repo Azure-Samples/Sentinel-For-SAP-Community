@@ -7,6 +7,8 @@ Extend the official Sentinel Solution for SAP (based on agentless data connector
 >
 > We are happy to feature your work in this repository.
 
+![Solution architecture](media/solution-architecture.png)
+
 ## Available Scenarios
 
 Find the available scenarios in the [artifacts folder](integration-artifacts/).
