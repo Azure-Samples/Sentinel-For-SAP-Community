@@ -2,6 +2,7 @@
 
 | **Version** | **Date Modified (DD-MM-YYYY)** | **Comments** |
 | --- | --- | --- |
+| 1.0.2 | 30-05-2025 | SOAR - user unblock action added |
 | 1.0.1 | 09-05-2025 | ABAP Table Reader scenario release |
 | 1.0.0 | 17-04-2025 | SOAR for SAP scenario release |
 
