@@ -9,9 +9,7 @@ Extend the official Sentinel Solution for SAP (based on agentless data connector
 
 ![Solution architecture](media/solution-architecture.png)
 
-## Available Scenarios
-
-Find the available scenarios in the [artifacts folder](integration-artifacts/).
+## Find the available scenarios in the [artifacts folder](integration-artifacts/)
 
 ### Requirements
 
@@ -47,3 +45,4 @@ This project has adopted the [Microsoft Open Source Code of Conduct](https://ope
 
 - [Microsoft Sentinel Solution for SAP | Microsoft Learn](https://learn.microsoft.com/azure/sentinel/sap/deployment-overview?tabs=agentless)
 - [Microsoft Sentinel Solution for SAP BTP | Microsoft Learn](https://learn.microsoft.com/azure/sentinel/sap/sap-btp-solution-overview)
+- [Microsoft Sentinel solution for SAP - Partner add-ons | Microsoft Learn](https://learn.microsoft.com/azure/sentinel/sap/solution-partner-overview)
