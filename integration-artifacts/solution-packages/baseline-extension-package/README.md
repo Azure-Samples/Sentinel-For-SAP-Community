@@ -2,19 +2,24 @@
 
 | **Version** | **Date Modified (DD-MM-YYYY)** | **Comments** |
 | --- | --- | --- |
+| 1.0.5 | 23-10-2025 | SAPControl based integration flow added (AS JAVA) |
 | 1.0.4 | 06-10-2025 | ClientCert auth added for S4 public edition |
 | 1.0.3 | 07-08-2025 | S/4HANA Cloud Public Edition (GROW) support added |
 | 1.0.2 | 30-05-2025 | SOAR - user unblock action added |
 | 1.0.1 | 09-05-2025 | ABAP Table Reader scenario release |
 | 1.0.0 | 17-04-2025 | SOAR for SAP scenario release |
 
+Pick latest zip file from source or the [releases section](https://github.com/Azure-Samples/Sentinel-For-SAP-Community/releases/latest).
+
 ## Configuration hints for artifacts
 
 Table of Contents
 
-- [SAP S/4HANA Cloud Public Edition (GROW)](#sap-s4hana-cloud-public-edition-grow)
-- [SOAR - Configure SAP User blocking + Audit Log reactivation](#soar---sap-integration-suite-endpoint-and-rfc-destination-name)
-- [Table Reader - Custom Sentinel tables](#table-reader---custom-sentinel-tables)
+1. [SAP S/4HANA Cloud Public Edition (GROW)](#sap-s4hana-cloud-public-edition-grow)
+1. [SOAR - Configure SAP User blocking + Audit Log reactivation](#soar---sap-integration-suite-endpoint-and-rfc-destination-name)
+1. [Table Reader - Custom Sentinel tables](#table-reader---custom-sentinel-tables)
+1. [SAPControl based log collector (e.g. AS JAVA)](#sapctrl-log-collector)
+1. [Permissions](#permissions)
 
 ### SAP S/4HANA Cloud Public Edition (GROW)
 
@@ -96,6 +101,22 @@ DCR-based custom log tables require the target schema to be defined beforehand. 
 
 > [!NOTE]
 > Log Analytics creates a TimeGenerated field if none is provided and treats all incoming values as append log stream. Meaning re-runs of the iFlow will create duplicates. Manage that by using only latest timestamp in Sentinel or altering the iFlow to do change data capture before posting.
+
+### SAPCtrl log collector
+
+This integration flow uses SAP Integration Suite's built-in capabilities to connect to SAPControl-based interface. It is suitable for security audit logs of AS JAVA systems, SAP ICM, or other log files accessible via SAPControl.
+
+#### Destination configuration example
+
+| **Property** | **Value** | **Description** |
+| --- | --- | --- |
+| Name | PO-[SID]-[Client]-SOAP | Destination name (e.g., PO-PI4-100-SOAP) |
+| Type | HTTP | Connection type |
+| URL | http://[virtual-hostname]:50013 | virtual host of your target SAPCtrl interface (note: https port 50014) |
+| Proxy Type | OnPremise | SAP Cloud Connector routed |
+| Authentication | BasicAuthentication | Authentication methods supported by S/4HANA Cloud public edition |
+| User | [SAPCtrl User] | if applicable |
+| Password | [Password] | if applicable |
 
 ### Permissions
 

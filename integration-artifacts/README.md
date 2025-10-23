@@ -11,9 +11,9 @@ Contribute your own integration scenarios to this repository! See the [contribut
 > [!TIP]
 > Make sure that single iFlows are imported into existing packages. Vice versa full packages need to be imported on the top level screen.
 
-## How to install
+## How to install from source
 
-1. Download the latest [solution](solution-packages/) by solution package.
+1. Download the latest [solution](solution-packages/) by solution package (zip files in folder).
 2. Import the solution package into your SAP Integration Suite.
    - Go to the **Design** tab in your SAP Integration Suite.
    - Click on **Packages** in the left navigation pane.
