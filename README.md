@@ -1,6 +1,6 @@
 # Welcome to Sentinel Solution for SAP Community for SAP Integration Suite Recipes
 
-Extend the official Sentinel Solution for SAP (based on agentless data connector) with the artifacts in this repository provided by the community. This project is a collection of integration artifacts or "recipes", specifically designed to help you implement your custom integration projects for Sentinel for SAP effectively.
+**Extend** the [official Sentinel Solution for SAP](https://learn.microsoft.com/en-us/azure/sentinel/sap/deployment-overview?tabs=agentless) (based on agentless data connector) with the artifacts in this repository provided by the community. This project is a collection of integration artifacts or "recipes", specifically designed to help you implement your custom integration projects for Sentinel for SAP effectively.
 
 > [!NOTE]
 > This is a community driven repository; you can simply discover and consume the artifacts or even better contribute your own. Learn more [here](CONTRIBUTING.md).
