@@ -69,13 +69,15 @@ See SAP's download instructions on SAP note [2660023](https://me.sap.com/notes/2
 
 - Follow the steps listed [here](https://learn.microsoft.com/azure/sentinel/sap/preparing-sap?pivots=connection-agentless#configure-the-connector-in-microsoft-sentinel-and-in-your-sap-system) to finalize the SAP system onboarding on the Sentinel Solution for SAP apps using the destination name and the auth details provided by the service key of your SAP Process Integration Runtime instance. Find more details [here](https://learn.microsoft.com/azure/sentinel/sap/preparing-sap?pivots=connection-agentless#configure-sap-btp-settings).
 
-- To use the iflow with the official connector as polling trigger adjust the community path on the http trigger
+- To use the iflow with the official connector as polling trigger supply the community path on Sentinel
 
-  - Navigate to Connection -> Address
-  - change `/community/SAPS4_Public_Cloud_Security_Audit_Log` to `/microsoft/sentinel/sap-log-trigger`
+  - Navigate to Advanced -> API endpoint path suffix
+  - Override default with community target `/community/SAPS4_Public_Cloud_Security_Audit_Log`.
 
-> [!WARNING]
-> If you already deployed the official Sentinel for SAP connector you will run into deployment errors with the community one. Current iflow versions can only be run exclusively.
+![Community flow configuration on Sentinel for SAP agentless connector](../../../media/agentless-customize-ui.png)
+
+> [!NOTE]
+> Community flows, the official agentless connector, and SAP's S/4HANA Cloud Public Edition connector in Sentinel can coexist without issues. Just ensure that the correct path is used in the connection settings.
 
 ### SOAR - SAP Integration Suite endpoint and RFC destination name
 
