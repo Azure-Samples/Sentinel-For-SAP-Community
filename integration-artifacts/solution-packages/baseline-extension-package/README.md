@@ -14,10 +14,15 @@ Pick latest zip file from source or the [releases section](https://github.com/Az
 
 ## Configuration hints for artifacts
 
-Table of Contents
+**Table of Contents**
+
+SAP SaaS apps
 
 1. [SAP Ariba](#sap-ariba)
 1. [SAP S/4HANA Cloud Public Edition (GROW)](#sap-s4hana-cloud-public-edition-grow)
+
+Supporting functions
+
 1. [SOAR - Configure SAP User blocking + Audit Log reactivation](#soar---sap-integration-suite-endpoint-and-rfc-destination-name)
 1. [Table Reader - Custom Sentinel tables](#table-reader---custom-sentinel-tables)
 1. [SAPControl based log collector (e.g. AS JAVA)](#sapctrl-log-collector)
@@ -74,7 +79,7 @@ Take note of your destination name for the next steps on Sentinel.
 - To use the iflow with the official connector as polling trigger supply the community path on Sentinel
 
   - Navigate to Advanced -> API endpoint path suffix
-  - Override default with community target `/community/SAPS4_Public_Cloud_Security_Audit_Log`.
+  - Override default with community target `/community/SAPAribaAuditSearch`.
 
 ![Community flow configuration on Sentinel for SAP agentless connector](../../../media/agentless-customize-ui.png)
 
