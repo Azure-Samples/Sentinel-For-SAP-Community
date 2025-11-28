@@ -28,13 +28,13 @@ Supporting functions
 1. [SAPControl based log collector (e.g. AS JAVA)](#sapctrl-log-collector)
 1. [Permissions](#permissions)
 
-### SAP Ariba
+### SAP Ariba (preview)
 
 This artifact activates the existing Microsoft Sentinel Solution for SAP applications capabilities build for SAP Ariba. The integration approach relies on SAP Ariba's [Audit Search API](https://api.sap.com/api/audit_search_v2/overview).
 
 #### Step by step
 
-- Follow SAP's [official documentation](https://help.sap.com/docs/ariba-apis/audit-search-api/audit-search-api) to get started with the Audit Search API. Create an API user with sufficient permissions to access the Audit Search API.
+- Follow SAP's [official documentation](https://help.sap.com/docs/ariba-apis/help-for-sap-ariba-developer-portal/steps-to-start-using-sap-ariba-apis) to get started with the Ariba Audit Search API.
 
 - Configure the iFlow "Send SAP Ariba Audit Logs to Microsoft Sentinel" the same way as described for SAP NetWeaver or private edition [here](https://learn.microsoft.com/azure/sentinel/sap/preparing-sap?pivots=connection-agentless#configure-the-connector-in-microsoft-sentinel-and-in-your-sap-system).
 
@@ -42,35 +42,35 @@ This artifact activates the existing Microsoft Sentinel Solution for SAP applica
 
 Take note of your destination name for the next steps on Sentinel.
 
-##### Destination configuration example (API Key Auth)
-
-| **Property** | **Value** | **Description** |
-| --- | --- | --- |
-| Name | Ariba-[TenantId] | Destination name (e.g., Ariba-p2pTeSap-2) |
-| Type | HTTP | Connection type |
-| URL | https://sandbox.api.sap.com/ariba/api/audit-search/v2/sandbox | SAP Ariba Audit Search API URL (Find your base URl under [Configuration Details](https://api.sap.com/api/audit_search_v2/overview)) |
-| Proxy Type | Internet | Always internet because of the cloud nature of the SAP service |
-| Authentication | BasicAuthentication | For use with APIKey header |
-| User | APIKey | if applicable |
-| Password | Your API Key | if applicable |
-
-| **Additional Properties** | **Value** | **Description** |
-| --- | --- | --- |
-| tenantId | [TenantId] | SAP Ariba tenant ID |
-
 ##### Destination configuration example (OAuth)
 
 | **Property** | **Value** | **Description** |
 | --- | --- | --- |
 | Name | Ariba-[TenantId] | Destination name (e.g., Ariba-p2pTeSap-2) |
 | Type | HTTP | Connection type |
-| URL | https://sandbox.api.sap.com/ariba/api/audit-search/v2/sandbox | SAP Ariba Audit Search API URL (Find your base URl under [Configuration Details](https://api.sap.com/api/audit_search_v2/overview)) |
+| URL | https://[region.]openapi.ariba.com/api/audit-search/v2/[prod or sandbox] | SAP Ariba Audit Search API URL (Find your base URl under [Configuration Details](https://api.sap.com/api/audit_search_v2/overview)) |
 | Proxy Type | Internet | Always internet because of the cloud nature of the SAP service |
-| Authentication | OAuth2 | For productive use |
+| Authentication | OAuth2ClientCredentials | For productive use |
 | Client ID | [ClientId] | if applicable |
 | Client Secret | [ClientSecret] | if applicable |
-| Token Service URL | [TokenUrl] | OAuth token endpoint |
-| Scope | [Scope] | if applicable |
+| Token Service URL | [TokenEndpoint]/v2/oauth/token | Ariba OAuth token endpoint |
+
+##### Destination configuration example (API Key Auth)
+
+| **Property** | **Value** | **Description** |
+| --- | --- | --- |
+| Name | Ariba-[TenantId] | Destination name (e.g., Ariba-p2pTeSap-2) |
+| Type | HTTP | Connection type |
+| URL | https://sandbox.api.sap.com/ariba/api/audit-search/v2/sandbox | SAP Ariba Audit Search API URL (Find your base URl under
+[Configuration Details](https://api.sap.com/api/audit_search_v2/overview)) |
+| Proxy Type | Internet | Always internet because of the cloud nature of the SAP service |
+| Authentication | BasicAuthentication | For use with APIKey header |
+| User | APIKey | Name of header to be sent |
+| Password | Your API Key | API Key value |
+
+| **Additional Properties** | **Value** | **Description** |
+| --- | --- | --- |
+| tenantId | [TenantId] | SAP Ariba tenant ID |
 
 ##### Finalize the setup
 
