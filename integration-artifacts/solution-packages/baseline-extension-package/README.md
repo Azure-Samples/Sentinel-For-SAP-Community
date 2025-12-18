@@ -14,14 +14,14 @@ Pick latest zip file from source or the [releases section](https://github.com/Az
 
 ## Configuration hints for artifacts
 
-**Table of Contents**
+### Table of Contents**
 
-SAP SaaS apps
+**SAP SaaS apps**
 
 1. [SAP Ariba](#sap-ariba)
 1. [SAP S/4HANA Cloud Public Edition (GROW)](#sap-s4hana-cloud-public-edition-grow)
 
-Supporting functions
+**Supporting functions**
 
 1. [SOAR - Configure SAP User blocking + Audit Log reactivation](#soar---sap-integration-suite-endpoint-and-rfc-destination-name)
 1. [Table Reader - Custom Sentinel tables](#table-reader---custom-sentinel-tables)
@@ -55,22 +55,23 @@ Take note of your destination name for the next steps on Sentinel.
 | Client Secret | [ClientSecret] | if applicable |
 | Token Service URL | [TokenEndpoint]/v2/oauth/token | Ariba OAuth token endpoint |
 
-##### Destination configuration example (API Key Auth)
-
-| **Property** | **Value** | **Description** |
-| --- | --- | --- |
-| Name | Ariba-[TenantId] | Destination name (e.g., Ariba-p2pTeSap-2) |
-| Type | HTTP | Connection type |
-| URL | https://sandbox.api.sap.com/ariba/api/audit-search/v2/sandbox | SAP Ariba Audit Search API URL (Find your base URl under
-[Configuration Details](https://api.sap.com/api/audit_search_v2/overview)) |
-| Proxy Type | Internet | Always internet because of the cloud nature of the SAP service |
-| Authentication | BasicAuthentication | For use with APIKey header |
-| User | APIKey | Name of header to be sent |
-| Password | Your API Key | API Key value |
-
 | **Additional Properties** | **Value** | **Description** |
 | --- | --- | --- |
 | tenantId | [TenantId] | SAP Ariba tenant ID |
+| apiKey | [apiKey] | Api key for your SAP Ariba tenant |
+
+> [!NOTE]
+> For testing purposes with API key from SAP API Business Hub you can also use pure API Key authentication as described below.
+>
+>| **Property** | **Value** | **Description** |
+>| --- | --- | --- |
+>| Name | Ariba-[TenantId] | Destination name (e.g., Ariba-p2pTeSap-2) |
+>| Type | HTTP | Connection type |
+>| URL | https://sandbox.api.sap.com/ariba/api/audit-search/v2/sandbox | SAP Ariba Audit Search API URL (Find your base URl under [Configuration Details](https://api.sap.com/api/audit_search_v2/overview)) |
+>| Proxy Type | Internet | Always internet because of the cloud nature of the SAP service |
+>| Authentication | BasicAuthentication | For use with APIKey header |
+>| User | APIKey | Name of header to be sent |
+>| Password | Your API Key | API Key value |
 
 ##### Finalize the setup
 
