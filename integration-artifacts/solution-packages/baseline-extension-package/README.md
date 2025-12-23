@@ -106,7 +106,7 @@ DCR-based custom log tables require the target schema to be defined beforehand. 
 
 ### SAPCtrl log collector
 
-This integration flow uses SAP Integration Suite's built-in capabilities to connect to SAPControl-based interface. It is suitable for security audit logs of AS JAVA systems, SAP ICM, or other log files accessible via SAPControl.
+This integration flow uses SAP Integration Suite's built-in capabilities to connect to SAPControl-based interface. It is suitable for security audit logs of AS JAVA systems, SAP ICM, or other log files accessible via SAPControl. See SAP's documentation for [Security Audit Log of the AS Java](https://help.sap.com/docs/SAP_NETWEAVER_750/1531c8a1792f45ab95a4c49ba16dc50b/4b6013583840584ae10000000a42189c.html), the official [SAP Note 221257](https://me.sap.com/notes/2212573) for reference. Consider also SAP's supportability note [3399302 ](https://me.sap.com/notes/0003399302) regarding older NetWeaver versions.
 
 #### Destination configuration example
 
