@@ -13,6 +13,8 @@
 
 See the leading base package zip file for SAP Integration Suite under [releases](https://github.com/Azure-Samples/Sentinel-For-SAP-Community/releases/latest).
 
+Among them popular SaaS solutions like SAP Ariba and SAP S/4HANA Cloud Public Edition (GROW) or enabler flows to read indiviudal tables.
+
 ### Requirements to contribute or consume the content
 
 - You will need a SAP Cloud Integration tenant to consume and enhance this content. Get a free trial of SAP Integration Suite [here](https://www.sap.com/products/technology-platform/trial.html).

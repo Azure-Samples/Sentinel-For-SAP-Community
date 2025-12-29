@@ -28,7 +28,7 @@ Pick latest zip file from source or the [releases section](https://github.com/Az
 1. [SAPControl based log collector (e.g. AS JAVA)](#sapctrl-log-collector)
 1. [Permissions](#permissions)
 
-### SAP Ariba (preview)
+### SAP Ariba
 
 This artifact activates the existing Microsoft Sentinel Solution for SAP applications capabilities build for SAP Ariba. The integration approach relies on SAP Ariba's [Audit Search API](https://api.sap.com/api/audit_search_v2/overview).
 
