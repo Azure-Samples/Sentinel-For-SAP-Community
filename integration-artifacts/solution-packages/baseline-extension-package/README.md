@@ -32,6 +32,8 @@ Pick latest zip file from source or the [releases section](https://github.com/Az
 
 This artifact activates the existing Microsoft Sentinel Solution for SAP applications capabilities build for SAP Ariba. The integration approach relies on SAP Ariba's [Audit Search API](https://api.sap.com/api/audit_search_v2/overview).
 
+See [**this blog post**](https://community.sap.com/t5/enterprise-resource-planning-blog-posts-by-members/sap-ariba-is-now-integrated-with-microsoft-sentinel-solution-for-sap/ba-p/14324356) for more details on the integration.
+
 #### Step by step
 
 - Follow SAP's [official documentation](https://help.sap.com/docs/ariba-apis/help-for-sap-ariba-developer-portal/steps-to-start-using-sap-ariba-apis) to get started with the Ariba Audit Search API.
