@@ -98,6 +98,8 @@ This artifact activates the existing Microsoft Sentinel Solution for SAP applica
 
 - Create a destination on BTP governing your connection and credential to S/4HANA Cloud Public Edition. It is a good practice to mention the three character SID and three digit client number (e.g. S4-PC-YKJ-100). Take note of your destination name for the next step.
 
+See [**this blog post**](https://community.sap.com/t5/enterprise-resource-planning-blog-posts-by-members/configure-certificate-auth-for-microsoft-sentinel-with-s-4hana-cloud-public/ba-p/14325596) for more details on the integration.
+
 ##### Destination configuration example (Basic Auth)
 
 | **Property** | **Value** | **Description** |
