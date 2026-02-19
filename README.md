@@ -19,7 +19,7 @@ Among them popular SaaS solutions like SAP Ariba and SAP S/4HANA Cloud Public Ed
 
 - You will need a SAP Cloud Integration tenant to consume and enhance this content. Get a free trial of SAP Integration Suite [here](https://www.sap.com/products/technology-platform/trial.html).
 - You will need an SAP system fit for your integration scenario. Check out these free options:
-  - SAP's [ABAP Platform Trial image](https://hub.docker.com/r/sapse/abap-cloud-developer-trial),
+  - SAP's [ABAP Platform Trial image](https://hub.docker.com/r/toberic/abap-platform-trial), check [SAPs repos on docker hub](https://hub.docker.com/u/sapse) for more options,
   - SAP S/4HANA Cloud, public cloud edition [Trial](https://www.sap.com/products/erp/s4hana/trial.html),
   - S/4HANA Fully-Activated Appliance from [SAP Cloud Appliance Library](https://cal.sap.com/), or
   - your own available in-house SAP system.
