@@ -1,0 +1,50 @@
+// This KQL code is generated for parsing custom log ABAP_PAHI_CL and ABAP_PAHI_2_CL
+//generated function structure for custom log ABAP_PAHI_CL
+//generated on 2026-04-14
+//Sentinel4SAP solution version 1.2.98
+let D_ABAP_PAHI_CL = datatable(TimeGenerated:datetime
+,PARTYPE:string
+,HOSTNAME:string
+,SYSTEMID:string
+,PARDATE:string
+,PARNAME:string
+,PARSTATE:string
+,PARVALUE:string
+,SystemID:string
+,Type:string
+)['1000-01-01T00:00:00Z','initialString','initialString','initialString','initialString','initialString','initialString','initialString','initialString','initialString'];
+let T_ABAP_PAHI_CL = (ABAP_PAHI_CL | project
+TimeGenerated = column_ifexists('TimeGenerated', '1000-01-01T00:00:00Z')
+,PARTYPE = column_ifexists('PARTYPE_s', 'initialString')
+,HOSTNAME = column_ifexists('HOSTNAME_s', 'initialString')
+,SYSTEMID = column_ifexists('SYSTEMID_s', 'initialString')
+,PARDATE = column_ifexists('PARDATE_s', 'initialString')
+,PARNAME = column_ifexists('PARNAME_s', 'initialString')
+,PARSTATE = column_ifexists('PARSTATE_s', 'initialString')
+,PARVALUE = column_ifexists('PARVALUE_s', 'initialString')
+,SystemID = column_ifexists('SystemID_s', 'initialString')
+,Type = column_ifexists('Type', 'initialString')
+);
+let D_ABAP_PAHI_2_CL = datatable(TimeGenerated:datetime
+,PARTYPE:string
+,HOSTNAME:string
+,SYSTEMID:string
+,PARDATE:string
+,PARNAME:string
+,PARSTATE:string
+,PARVALUE:string
+,Type:string
+)['1000-01-01T00:00:00Z','initialString','initialString','initialString','initialString','initialString','initialString','initialString','initialString'];
+let T_ABAP_PAHI_2_CL = (ABAP_PAHI_2_CL | project
+TimeGenerated = column_ifexists('TimeGenerated', datetime('1000-01-01T00:00:00Z'))
+,PARTYPE = column_ifexists('PARTYPE', 'initialString')
+,HOSTNAME = column_ifexists('HOSTNAME', 'initialString')
+,SYSTEMID = column_ifexists('SYSTEMID', 'initialString')
+,PARDATE = tostring(column_ifexists('PARDATE', 0))
+,PARNAME = column_ifexists('PARNAME', 'initialString')
+,PARSTATE = column_ifexists('PARSTATE', 'initialString')
+,PARVALUE = column_ifexists('PARVALUE', 'initialString')
+,SystemID = column_ifexists('SYSTEMID', 'initialString')
+,Type = column_ifexists('Type', 'initialString')
+);
+T_ABAP_PAHI_CL | union isfuzzy= true T_ABAP_PAHI_2_CL | union isfuzzy= true (D_ABAP_PAHI_CL | where TimeGenerated != '1000-01-01T00:00:00Z') | union isfuzzy= true (D_ABAP_PAHI_2_CL | where TimeGenerated != '1000-01-01T00:00:00Z')
