@@ -2,6 +2,7 @@
 
 | **Version** | **Date Modified (DD-MM-YYYY)** | **Comments** |
 | --- | --- | --- |
+| 1.0.8 | 28-04-2026 | KeyValue map for Data Collector customizing added |
 | 1.0.7 | 31-03-2026 | PAHI reader, Scheduler flow added |
 | 1.0.6 | 01-12-2025 | SAP Ariba flow added |
 | 1.0.5 | 23-10-2025 | SAPControl based integration flow added (AS JAVA) |
@@ -30,6 +31,7 @@ Pick latest zip file from source or the [releases section](https://github.com/Az
 1. [PAHI Legacy Reader - Track admin changes](#pahi-legacy-reader---track-admin-changes)
 1. [SAPControl based log collector (e.g. AS JAVA)](#sapctrl-log-collector)
 1. [Data Collector Scheduler](#data-collector-scheduler)
+1. [Data Collector Customizing (Key Value Map)](#data-collector-customizing-key-value-map)
 1. [Permissions](#permissions)
 
 ### SAP Ariba
@@ -220,6 +222,17 @@ graph LR
     style D fill:#e8f5e9
 ```
 
+
+### Data Collector Customizing (Key Value Map)
+
+A Key Value Map (KVM) is shipped with this package to externalize the customizing of the official Data Collector iFlow. Instead of editing the iFlow configuration directly, you maintain the parameters centrally in the KVM, which the iFlow reads at runtime.
+
+See Microsoft's [official guidance on customizing data connector behavior](https://learn.microsoft.com/azure/sentinel/sap/deploy-data-connector-agent-container?tabs=managed-identity&pivots=connection-agentless#customize-data-connector-behavior-optional) for the list of supported parameters and their meaning.
+
+#### Step by step
+
+- Deploy the KVM artifact shipped in this package to your SAP Integration Suite tenant.
+- Open the KVM and maintain the entries with the values applicable to your SAP system (refer to the Microsoft Learn article above for parameter names and accepted values).
 
 ### Permissions
 
