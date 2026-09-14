@@ -2,6 +2,7 @@
 
 | **Version** | **Date Modified (DD-MM-YYYY)** | **Comments** |
 | --- | --- | --- |
+| 1.0.9 | 14-09-2026 | SAP SuccessFactors flow added (Audit Log Service Search API) |
 | 1.0.8 | 28-04-2026 | KeyValue map for Data Collector customizing added |
 | 1.0.7 | 31-03-2026 | PAHI reader, Scheduler flow added |
 | 1.0.6 | 01-12-2025 | SAP Ariba flow added |
@@ -21,6 +22,7 @@ Pick latest zip file from source or the [releases section](https://github.com/Az
 **SAP SaaS apps**
 
 1. [SAP Ariba](#sap-ariba)
+1. [SAP SuccessFactors](#sap-successfactors)
 1. [SAP S/4HANA Cloud Public Edition (GROW)](#sap-s4hana-cloud-public-edition-grow)
 1. [SAP Integrated Business Planning (IBP)](#sap-s4hana-cloud-public-edition-grow) (same steps as GROW using `SAP_COM_0750`)
 
@@ -84,6 +86,51 @@ Take note of your destination name for the next steps on Sentinel.
 ##### Finalize the setup
 
 Follow the [common finalize steps](#finalize-sentinel-onboarding) below, using community API path `/community/SAPAribaAuditSearch`.
+
+### SAP SuccessFactors
+
+This artifact activates the existing Microsoft Sentinel Solution for SAP applications capabilities for SAP SuccessFactors. The integration approach relies on the next-generation (v3) [SAP Audit Log Service (ALS)](https://help.sap.com/docs/AUDIT_LOG_VIEWER/c3f8b96450e443cebbdc9c2d162b86fa/1bbf89116ca842549273a907a7e22241.html) **Search API v1**, which serves audit events of multiple SAP cloud services from a central store. The iFlow offers an option to filter the result set to SuccessFactors-only entries.
+
+#### Step by step
+
+- Follow SAP's [Getting Started With SAP Audit Log Service Search API](https://help.sap.com/docs/AUDIT_LOG_VIEWER/c3f8b96450e443cebbdc9c2d162b86fa/1bbf89116ca842549273a907a7e22241.html) to onboard the service and determine your region-specific Search API base URL and token endpoint.
+
+- Ensure your SuccessFactors instance is connected to the next-generation Audit Log Service so that its audit events are available through the Search API. Consult SAP's [Audit Log Viewer documentation](https://help.sap.com/docs/AUDIT_LOG_VIEWER) for the current service enablement steps.
+
+- Configure the iFlow "Send SAP SuccessFactors audit logs to Microsoft Sentinel" the same way as described for SAP NetWeaver or private edition [here](https://learn.microsoft.com/azure/sentinel/sap/preparing-sap?pivots=connection-agentless#configure-the-connector-in-microsoft-sentinel-and-in-your-sap-system).
+
+- Create a destination on BTP governing your SAP ALS connection (access to SuccessFactors audit logs) and respective credential via the required SAP Cloud Identity Service. It is a good practice to mention the tenant (e.g. ALS-SF-prod).
+
+Take note of your destination name for the next steps on Sentinel.
+
+##### Destination configuration example (OAuth2)
+
+| **Property** | **Value** | **Description** |
+| --- | --- | --- |
+| Name | ALS-SF-[Tenant] | Destination name (e.g., ALS-SF-prod) |
+| Type | HTTP | Connection type |
+| URL | https://[als-search-api-host].als.services.cloud.sap/search/v1 | Audit Log Service Search API base URL from your service key (see [Getting Started](https://help.sap.com/docs/AUDIT_LOG_VIEWER/c3f8b96450e443cebbdc9c2d162b86fa/1bbf89116ca842549273a907a7e22241.html)) |
+| Proxy Type | Internet | Always internet because of the cloud nature of the SAP service |
+| Authentication | OAuth2ClientCredentials | For productive use |
+| Client ID | [ClientId] | from [SAP CIS credentials](https://help.sap.com/docs/AUDIT_LOG_VIEWER/c3f8b96450e443cebbdc9c2d162b86fa/83d19cec1ac74bfe9e69e0cede5d0822.html) |
+| Client Secret | [ClientSecret] | from [SAP CIS credentials](https://help.sap.com/docs/AUDIT_LOG_VIEWER/c3f8b96450e443cebbdc9c2d162b86fa/83d19cec1ac74bfe9e69e0cede5d0822.html) |
+| Token Service URL | https://[sap-cis-domain].accounts.ondemand.com/oauth2/token | OAuth token endpoint from the [ALS documentation](https://help.sap.com/docs/AUDIT_LOG_VIEWER/c3f8b96450e443cebbdc9c2d162b86fa/782e8fad25134207bf14a4f80d9c11b1.html) |
+| User | Technical User Name | from [SAP CIS credentials](https://help.sap.com/docs/AUDIT_LOG_VIEWER/c3f8b96450e443cebbdc9c2d162b86fa/83d19cec1ac74bfe9e69e0cede5d0822.html) |
+| Password | Technical User Password | from [SAP CIS credentials](https://help.sap.com/docs/AUDIT_LOG_VIEWER/c3f8b96450e443cebbdc9c2d162b86fa/83d19cec1ac74bfe9e69e0cede5d0822.html) |
+
+> [!NOTE]
+> The ALS Search API is a shared store across SAP cloud services. Without the SuccessFactors filter you may ingest audit events of other services running in the same subaccount.
+
+##### Finalize the setup
+
+Follow the [common finalize steps](#finalize-sentinel-onboarding) below, using community API path `/community/SAPSFAuditSearch`.
+
+Verify audit log ingest from table `SAP_SFAudit_CL` or your own chosen custom table in Microsoft Sentinel.
+
+```kql
+SAP_SFAudit_CL
+| take 10
+```
 
 ### SAP S/4HANA Cloud Public Edition (GROW)
 
